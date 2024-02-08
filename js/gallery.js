@@ -98,10 +98,15 @@ function createProducts(images) {
                                                    >
                                                </div>`);
            modalWindow.show();
+           
+           const modalImage = modalWindow.element().querySelector('img');
+  modalImage.addEventListener('click', () => {
+    modalWindow.close();
+  });
        };
    })
    document.addEventListener("keydown", (event) => {
-       if (event.code === "Escape") {
+       if (event.code === "Escape" && modalWindow) {
            modalWindow.close();
        }
    });
